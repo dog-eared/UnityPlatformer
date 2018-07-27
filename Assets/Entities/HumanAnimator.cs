@@ -17,7 +17,6 @@ public class HumanAnimator : MonoBehaviour {
 	generic .SetIntegers for common types of movement, handle error exception. Then, have specific types of
 	character inherit. Come back to this one.
 
-
 	*/
 
 
@@ -26,6 +25,14 @@ public class HumanAnimator : MonoBehaviour {
 		if (_anim == null) {
 			_anim = GetComponent<Animator>();
 		}	
+	}
+
+	public void SetGrounded(bool state) {
+		if (state == true) {
+			_anim.SetBool("In Air", true);
+		} else {
+			_anim.SetBool("In Air", false);
+		}
 	}
 
 	public void SetAnimation(string newState = "Idle") {
@@ -42,4 +49,5 @@ public class HumanAnimator : MonoBehaviour {
 		}
 
 	}
+
 }

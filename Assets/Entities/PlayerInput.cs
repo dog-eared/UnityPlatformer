@@ -1,9 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour {
 
+	public GameObject _playerObj;
 	PlayerController _pc;
 
 	Vector2 input;
@@ -13,8 +14,13 @@ public class PlayerInput : MonoBehaviour {
 	/* Private Methods */
 
 	private void Awake() {
+
+		if (_playerObj == null) {
+			_playerObj = GameObject.FindWithTag("PlayerCharacter");
+		}
+
 		if (_pc == null) {
-			_pc = GetComponent<PlayerController>();
+			_pc = _playerObj.GetComponent<PlayerController>();
 		}
 	}
 
@@ -34,6 +40,10 @@ public class PlayerInput : MonoBehaviour {
 
 		if (Input.GetButton("Fire1")) {
 			_pc.Jump();
+		}
+
+		if (Input.GetButtonDown("Fire3")) {
+			Debug.Log("Shooting");
 		}
 
 		if (Input.GetButtonDown("Fire2")) {

@@ -9,7 +9,7 @@ public class Enemy_DamageOnTouch : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col) {
 		Debug.Log(col.gameObject.name);
-		if (col.gameObject.tag == "Player") {
+		if (col.gameObject.CompareTag("Player")) {
 			PlayerVitals pv;
 			try {
 				pv = col.gameObject.GetComponent<PlayerVitals>();

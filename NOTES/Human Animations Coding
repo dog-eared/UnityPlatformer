@@ -1,0 +1,30 @@
+As a rule, animations should follow the following scheme:
+
+"CurrentAnimation" is the variable name that controls the currently playing animation
+
+//0-10 -- BASE ANIMATIONS
+//These are common and should be consistent across all character/enemy types.
+//If an enemy doesn't have a run animation (for example), the same animation can be used
+//whether CurrentAnimation is 1 or 2. Static enemies might always fall back to CurrentAnimation 0
+
+0 -- Idle state
+1 -- Walking
+2 -- Running
+
+3 -- Jumping
+4 -- Falling
+
+5 --
+6 -- 
+7 -- 
+
+8 -- Being Hit
+
+9 -- Death (Basic)
+
+10-99 (but ideally less than 15...) - used for abilities
+
+100+ - used for special actions; NPCs emoting, monsters idling, players climbing ladders or checking their phone, etc
+
+
+I really, really don't want to deal with more animations than this. If it gets to the point where I need more than this, I'm switching to 3D characters. 
